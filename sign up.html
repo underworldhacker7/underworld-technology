@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="sign up.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <form id="login" class="input-group active">
+                <h2>Log In</h2>
+                <input type="text" class="input-field" placeholder="Name" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box">
+                <span>Remember Password</span>
+                <p>Don't have an account? <a href="#signup">Register</a></p>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+
+            <form id="signup" class="input-group">
+                <h2>Register</h2>
+                <input type="text" class="input-field" placeholder="Full Name" required>
+                <input type="email" class="input-field" placeholder="Email " required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type=" confirm_password" class="input-field" placeholder="confirm Password" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <br/><p>Arleady have an account? <a href="#login">Login</a></p>
+                <span>Sign in with Google</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+
+            <div class="social-icons">
+                <template id="social-icon-template">
+                    <a href="" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="" alt="" class="social-icon">
+                        <span class="social-text"></span>
+                    </a>
+                </template>
+
+                <div id="social-icons-container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const socialIconsData = [
+            { href: "https://www.facebook.com", src: "https://img.icons8.com/color/48/000000/facebook-new.png", alt: "Facebook" },
+            { href: "https://www.instagram.com", src: "https://img.icons8.com/color/48/000000/instagram-new.png", alt: "Instagram" },   
+            { href: "https://www.linkedin.com", src: "https://img.icons8.com/color/48/000000/linkedin.png", alt: "LinkedIn" },  
+            { href: "https://www.youtube.com", src: "https://img.icons8.com/color/48/000000/youtube-play.png", alt: "YouTube" },    
+            { href: "https://www.google.com", src: "https://img.icons8.com/color/48/000000/google-plus.png", alt: "Google" },
+            { href: "https://www.twitter.com", src: "https://img.icons8.com/fluency/48/000000/twitter.png", alt: "Twitter" }
+        ];
+
+        const template = document.getElementById('social-icon-template');
+        const container = document.getElementById('social-icons-container');
+
+        socialIconsData.forEach(icon => {
+            const clone = template.content.cloneNode(true);
+            const link = clone.querySelector('.social-link');
+            const img = clone.querySelector('.social-icon');
+            const text = clone.querySelector('.social-text');
+
+            link.href = icon.href;
+            img.src = icon.src;
+            img.alt = icon.alt;
+            text.textContent = icon.text;
+
+            container.appendChild(clone);
+        });
+    </script>
+</body>
+</html>
