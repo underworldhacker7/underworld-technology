@@ -173,3 +173,14 @@ span {
         padding-bottom: 20px;
     }
 }
+.messageDiv{
+    background-color: #777;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeout 7s forwards;
+}

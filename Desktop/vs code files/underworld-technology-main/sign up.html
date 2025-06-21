@@ -10,16 +10,18 @@
     <div class="container">
         <div class="form-box">
             <form id="login" class="input-group active">
+                <div id="login" class="messageDiv" style="display: none;"></div>
                 <h2>Log In</h2>
                 <input type="text" class="input-field" placeholder="Name" required>
                 <input type="password" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box">
                 <span>Remember Password</span>
                 <p>Don't have an account? <a href="#signup">Register</a></p>
-                <button type="submit" class="submit-btn">Log In</button>
+                <button type="submit-btn" class="submit-btn">Log In</button>
             </form>
 
             <form id="signup" class="input-group">
+                <div id="signupMessage" class="messageDiv" style="display: none;"></div>
                 <h2>Register</h2>
                 <input type="text" class="input-field" placeholder="Full Name" required>
                 <input type="email" class="input-field" placeholder="Email " required>
@@ -27,7 +29,7 @@
                 <input type=" confirm_password" class="input-field" placeholder="confirm Password" required>
                 <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
                 <br/><p>Arleady have an account? <a href="#login">Login</a></p>
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit-btn" class="submit-btn">Register</button>
             </form>
 
             <div class="social-icons">
@@ -43,16 +45,13 @@
             </div>
         </div>
     </div>
-
+    <script type="module" src="firebaseauth.js"></script>
     <script src="script.js"></script>
     <script>
         const socialIconsData = [
             { href: "https://www.facebook.com", src: "https://img.icons8.com/color/48/000000/facebook-new.png", alt: "Facebook" },
             { href: "https://www.instagram.com", src: "https://img.icons8.com/color/48/000000/instagram-new.png", alt: "Instagram" },   
-            { href: "https://www.linkedin.com", src: "https://img.icons8.com/color/48/000000/linkedin.png", alt: "LinkedIn" },  
-            { href: "https://www.youtube.com", src: "https://img.icons8.com/color/48/000000/youtube-play.png", alt: "YouTube" },    
-            { href: "https://www.google.com", src: "https://img.icons8.com/color/48/000000/google-plus.png", alt: "Google" },
-            { href: "https://www.twitter.com", src: "https://img.icons8.com/fluency/48/000000/twitter.png", alt: "Twitter" }
+            { href: "https://www.google.com", src: "https://img.icons8.com/color/48/000000/google-plus.png", alt: "Google" }
         ];
 
         const template = document.getElementById('social-icon-template');
@@ -72,5 +71,7 @@
             container.appendChild(clone);
         });
     </script>
+    
+
 </body>
 </html>
